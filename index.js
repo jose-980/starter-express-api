@@ -11,6 +11,7 @@ app.get('/', (req,res) => {
 // API endpoint for converting YouTube links
 app.post('/convert', (req, res) => {
   const { url, format } = req.body;
+  console.log(`url: ${url} and the format is : ${format}\n\n`)
 
   // Use youtube-dl to download and convert the video
   exec(`youtube-dl -x --audio-format ${format} ${url}`, (error, stdout, stderr) => {
