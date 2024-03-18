@@ -10,6 +10,7 @@ app.get('/', (req,res) => {
 
 // API endpoint for converting YouTube links
 app.post('/convert', (req, res) => {
+  console.log(`the body is : `, req);
   const { url, format } = req.body;
   console.log(`url: ${url} and the format is : ${format}\n\n`)
 
